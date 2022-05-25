@@ -61,7 +61,10 @@ fun uploadTask(path:String){
 fun deleteTask(path:String){
     var deleted=false
     for(i in 0 until numberOfSections){
-        if(arr[i]!!.deleteTask(path)) deleted=true
+        if(arr[i]!!.deleteTask(path)){
+            deleted=true
+            break
+        }
     }
     if(deleted){
         for(i in 0 until list.size){
